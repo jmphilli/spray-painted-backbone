@@ -1,0 +1,32 @@
+<% if (typeof result != "undefined") { %>
+  <input type='hidden' id='id' value=<%= result.get("id") %> />
+  <label for="username"> Display Name </label>
+  <input type='text' id='username' value=<%= "\"" + result.get("username") + "\""%>/>
+  <label for="email"> Email </label>
+  <input type='text' id="email" value=<%= "\"" + result.get("email") + "\""%>/>
+  <label for="password"> Password </label>
+  <input type='password' id='password'/>
+  <label for="password-confirm"> Confirm Password </label>
+  <input type='text' id='password-confirm'/>
+  <input type='password' id='userType' value=<%= "\"" + result.get("userType") + "\""%> />
+  <input id='updateUser' type='submit' value='Update User' class='button' />
+  <input id='deleteUser' type='submit' value='Delete User' class='button' />
+<% } else { %>
+  <label for="username"> Display Name </label>
+  <input type='text' id='username' />
+  <label for="email"> Email </label>
+  <input type='text' id="email" />
+  <label for="password"> Password </label>
+  <input type='password' id='password' />
+  <label for="password-confirm"> Confirm Password </label>
+  <input type='password' id='password-confirm'/>
+
+  <label for="state-id"> State ID </label>
+  <input type='file' id='state-id' accept="image/*"/>
+
+  <label for="medical-card"> Medical Card </label>
+  <input type='file' id='medical-card' accept="image/*"/>
+
+  <input type='hidden' id='userType' />
+  <input id='postUser' type='submit' value='Create User' class='button' />
+<% } %>
